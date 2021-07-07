@@ -21,6 +21,7 @@ const MSG_WRONG_EMAIL_PASSWORD = 'Incorrect email or password'
 const MSG_TOKEN_NOT_PROVIDED = 'Access token not provided'
 const MSG_REVOKED_TOKEN = 'Error access_token is revoked'
 
+const PORT = process.env.PORT || 8877;
 
 // Create a token from a payload 
 function createToken(payload) {
@@ -125,6 +126,6 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 
 server.use(router)
 
-server.listen(8000, () => {
+server.listen(PORT, () => {
     console.log('Run Auth API Server')
 })
